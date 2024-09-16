@@ -23,7 +23,7 @@ export const validateUser = (req, res, next) => {
       "errors",
       error.details.map((err) => err.message)
     );
-    return res.send(error.details.map((err) => err.message));
+    return res.redirect("/");
   }
   next();
 };

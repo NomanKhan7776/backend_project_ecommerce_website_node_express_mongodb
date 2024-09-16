@@ -10,6 +10,7 @@ import productsRouter from "./routes/productsRouter.js";
 import router from "./routes/index.js";
 import flash from "connect-flash";
 import session from "express-session";
+import shopRouter from "./routes/shop.js";
 
 dotenv.config();
 
@@ -44,9 +45,10 @@ app.use((req, res, next) => {
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 app.use("/", router);
-app.use("/register", usersRouter);
+app.use("/users", usersRouter);
 app.use("/products", productsRouter);
 app.use("/owner", ownerRouter);
-app.use("/users", usersRouter);
+app.use("/shop", shopRouter);
+// app.use("/users", usersRouter);
 
 app.listen(3000);
