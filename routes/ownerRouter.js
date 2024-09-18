@@ -2,6 +2,7 @@ import express from "express";
 import owner from "../models/owner.model.js";
 const ownerRouter = express.Router();
 
+
 if (process.env.NODE_ENV === "development") {
   ownerRouter.post("/create", async (req, res) => {
     const { email, fullname, password } = req.body;
@@ -19,8 +20,13 @@ if (process.env.NODE_ENV === "development") {
   });
 }
 
-ownerRouter.get("/", (req, res) => {
-  res.send("its working");
+ownerRouter.get("/admin", (req, res) => {
+  res.render("createproducts", {
+    errors: req.flash("errors"),
+    error: req.flash("error"),
+    success: req.flash("success"),
+  });
 });
+
 
 export default ownerRouter;

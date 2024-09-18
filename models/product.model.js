@@ -1,15 +1,22 @@
 import mongoose from "mongoose";
 
 const productSchema = mongoose.Schema({
+  sku: {
+    type: String,
+    unique: true,
+  },
   name: {
     type: String,
-    required: [true, "please enter product name"],
+    required: true,
   },
   price: {
     type: Number,
-    required: [true, "please enter price"],
+    required: true,
   },
-  image: String,
+  image: {
+    data: Buffer,
+    mimetype: String,
+  },
   discount: {
     type: Number,
     default: 0,
@@ -19,4 +26,4 @@ const productSchema = mongoose.Schema({
   textcolor: String,
 });
 
-export default mongoose.model("product", productSchema);
+export const productmodel = mongoose.model("product", productSchema);
