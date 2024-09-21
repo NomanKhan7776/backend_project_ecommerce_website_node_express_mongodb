@@ -3,6 +3,11 @@ import isLoggedIn from "../middlewares/isLoggedIn.js";
 import { productmodel } from "../models/product.model.js";
 import user from "../models/user.model.js";
 import { cartController } from "../controllers/cartController.js";
+import {
+  checkoutCancelController,
+  checkoutController,
+  checkoutSuccessController,
+} from "../controllers/checkoutController.js";
 const shopRouter = express.Router();
 
 shopRouter.get("/", isLoggedIn, async (req, res) => {
@@ -32,4 +37,7 @@ shopRouter.get("/addtocart/:id", isLoggedIn, async (req, res) => {
   }
 });
 shopRouter.get("/cart", isLoggedIn, cartController);
+shopRouter.post("/checkout", isLoggedIn, checkoutController);
+shopRouter.get("/checkout-success", isLoggedIn, checkoutSuccessController);
+shopRouter.get("/checkout-cancel", isLoggedIn, checkoutCancelController);
 export default shopRouter;

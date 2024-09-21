@@ -1,0 +1,15 @@
+<%- include('./partials/header') %>
+<div class="w-full min-h-screen flex items-center justify-center">
+  <div class="bg-white shadow-lg rounded-lg p-10 text-center">
+    <h2 class="text-2xl font-semibold text-red-600"><%= title %></h2>
+    <p class="mt-5">
+      There was an issue processing your payment. Please try again.
+    </p>
+    <a
+      href="/shop/cart"
+      class="mt-8 inline-block bg-blue-600 text-white px-5 py-2 rounded-md"
+      >Go Back to Cart</a
+    >
+  </div>
+</div>
+<%- include('./partials/footer') %>

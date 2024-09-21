@@ -11,8 +11,8 @@ export const cartController = async (req, res, next) => {
     let plateformFee = 50;
     userCart.cart.forEach((product) => {
       totalMRP += product.price;
-      if (product.discount) {
-        totalDiscount += product.price - product.discount;
+      if (product.discount !== 0) {
+        totalDiscount += product.discount;
       }
     });
     let totalPrice = totalMRP - totalDiscount + plateformFee + shippingFee;
