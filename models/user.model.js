@@ -14,7 +14,12 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  cart: Array,
+  cart: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "product",
+    },
+  ],
   orders: Array,
   contact: Number,
   picture: String,

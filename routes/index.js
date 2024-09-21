@@ -6,6 +6,7 @@ router.get("/", (req, res) => {
     errors: req.flash("errors"),
     error: req.flash("error"),
     success: req.flash("success"),
+    loggedIn: false,
   });
 });
 

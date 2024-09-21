@@ -77,23 +77,26 @@
         <div>
           <h3 class="text-lg font-semibold mb-2">Panel Details</h3>
           <div class="grid grid-cols-2 gap-4">
+            <label class="block mb-2 font-medium">Background Color</label>
             <input
               name="bgcolor"
-              type="text"
-              placeholder="Background Color"
-              class="border p-2 rounded w-full"
+              type="color"
+              class="w-full rounded"
+              value="#ffffff"
             />
+            <label class="block mb-2 font-medium">Panel Color</label>
             <input
               name="panelcolor"
-              type="text"
-              placeholder="Panel Color"
-              class="border p-2 rounded w-full"
+              type="color"
+              class="w-full rounded"
+              value="#ffffff"
             />
+            <label class="block mb-2 font-medium">Text Color</label>
             <input
               name="textcolor"
-              type="text"
-              placeholder="Text Color"
-              class="border p-2 rounded w-full"
+              type="color"
+              class="w-full rounded"
+              value="#000000"
             />
           </div>
         </div>
@@ -106,4 +109,5 @@
     </main>
   </div>
 </div>
+
 <%- include('./partials/footer') %>
