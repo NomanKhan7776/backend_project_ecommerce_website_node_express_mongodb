@@ -8,6 +8,7 @@ import {
   checkoutController,
   checkoutSuccessController,
 } from "../controllers/checkoutController.js";
+import { deleteCartItem } from "../controllers/deleteCartItemController.js";
 const shopRouter = express.Router();
 
 shopRouter.get("/", isLoggedIn, async (req, res) => {
@@ -40,4 +41,5 @@ shopRouter.get("/cart", isLoggedIn, cartController);
 shopRouter.post("/checkout", isLoggedIn, checkoutController);
 shopRouter.get("/checkout-success", isLoggedIn, checkoutSuccessController);
 shopRouter.get("/checkout-cancel", isLoggedIn, checkoutCancelController);
+shopRouter.get("/cart/delete/:id", isLoggedIn, deleteCartItem);
 export default shopRouter;

@@ -17,8 +17,8 @@ export const registerUser = async (req, res, next) => {
       email,
       password: hash,
     });
-    const token = genrateToken(createdUser);
-    res.cookie("token", token);
+    // const token = genrateToken(createdUser);
+    // res.cookie("token", token);
     req.flash("success", "your account is created! please log In");
     res.redirect("/");
   } catch (error) {
